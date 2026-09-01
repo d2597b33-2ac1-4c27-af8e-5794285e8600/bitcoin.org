@@ -1,6 +1,6 @@
 ---
 # This file is licensed under the MIT License (MIT) available on
-# http://opensource.org/licenses/MIT.
+# https://opensource.org/licenses/MIT.
 
 layout: base-core
 lang: en
@@ -14,8 +14,19 @@ breadcrumbs:
 
 moved_url: https://bitcoincore.org/en/2015/12/23/capacity-increases-faq/
 ---
+
+
+<div class="hero">
+<div class="container hero-container" markdown="block">
+
 # Capacity increases FAQ
 
+</div>
+</div>
+
+
+<div class="bitcore-content">
+<div class="container" markdown="block">
 Other versions: [Italiano](/it/bitcoin-core/capacity-increases-faq) \| [简体中文](/zh_CN/bitcoin-core/capacity-increases-faq) \| [繁體中文](/zh_TW/bitcoin-core/capacity-increases-faq)
 
 1. toc
@@ -94,7 +105,7 @@ filled with standard single-signature P2PKH transactions would be about
 be about 2.0MB.
 
 [current proposal]: https://youtu.be/fst1IK_mrng?t=2234
-[calculations]: http://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011869.html
+[calculations]: https://gnusha.org/pi/bitcoindev/20151208045803.GA1042@sapphire.erisian.com.au/
 
 ## Segregated witness sounds complicated; will the ecosystem be prepared for its deployment?  {#ecosystem-ready}
 
@@ -174,7 +185,7 @@ increases the maximum block size.
 
 No. That is not part of the [roadmap][].
 
-[roadmap]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011865.html
+[roadmap]: https://gnusha.org/pi/bitcoindev/CAAS2fgQyVs1fAEj+vqp8E2=FRnqsgs7VUKqALNBHNxRMDsHdVg@mail.gmail.com/
 
 ## If there's eventually going to be a hard fork, why not do it now? {#why-not-now}
 
@@ -351,10 +362,10 @@ In particular, [code review][] is a critical part of getting soft forks
 deployed.
 
 To get specific suggestions on how you can help, please join the
-[#bitcoin-dev][] IRC channel.
+[#bitcoin-core-dev][#bitcoin-dev] IRC channel.
 
-[#bitcoin-dev]: https://webchat.freenode.net/?channels=bitcoin-dev&amp;uio=d4
-[actively studied]: http://diyhpl.us/wiki/transcripts/scalingbitcoin/bitcoin-block-propagation-iblt-rusty-russell/
+[#bitcoin-dev]: https://web.libera.chat/#bitcoin-core-dev
+[actively studied]: https://diyhpl.us/wiki/transcripts/scalingbitcoin/bitcoin-block-propagation-iblt-rusty-russell/
 [bip-segwit]: https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki
 [BIP9]: https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki
 [BIP16]: https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki
@@ -367,7 +378,7 @@ To get specific suggestions on how you can help, please join the
 [BIP112]: https://github.com/bitcoin/bips/blob/master/bip-0112.mediawiki
 [BIP113]: https://github.com/bitcoin/bips/blob/master/bip-0113.mediawiki
 [bitcoin core contributor]: /en/bitcoin-core/
-[Bitcoin relay network]: http://bitcoinrelaynetwork.org/
+[Bitcoin relay network]: https://bitcoinrelaynetwork.org/
 [code review]: https://bitcoin.org/en/development#code-review
 [commit spreadsheet]: https://docs.google.com/spreadsheets/d/15jtxuA3dVY5NUuYezZ4d_69ASUMYjqFOMxsF9ZX-BKA/edit?usp=sharing
 [commit stats]: https://github.com/bitcoin/bitcoin/graphs/contributors?from=2015-01-01&to=2015-12-31&type=c
@@ -382,3 +393,5 @@ To get specific suggestions on how you can help, please join the
 [statement]: /en/bitcoin-core/capacity-increases
 [weak blocks and iblts]: https://www.youtube.com/watch?v=ivgxcEOyWNs&t=1h40m20s
 [q simple raise]: #size-bump
+</div>
+</div>

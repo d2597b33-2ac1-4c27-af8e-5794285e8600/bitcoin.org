@@ -29,7 +29,12 @@ dependencies and tools, which are pretty easy on any modern Linux:
 On recent versions of Ubuntu and Debian, you can run the following
 command to ensure you have the required libraries, headers, and tools:
 
-    sudo apt-get install build-essential git libicu-dev zlib1g-dev
+    sudo apt-get install build-essential git libicu-dev pandoc python3 zlib1g-dev
+
+Python and Pandoc generate the local HTML mirror of the BIP documents. The
+generator fetches the exact `bitcoin/bips` revision pinned in
+`_build/bips-source.json`, caches it in `_cache`, and refuses to build a partial
+or different revision.
 
 **Install RVM**
 
@@ -42,19 +47,20 @@ following command:
 
     source ~/.rvm/scripts/rvm
 
-**Install Ruby 2.0.0**
+**Install Ruby 3.3.10**
 
-To install Ruby 2.0.0, simply run this command:
+To install Ruby 3.3.10, simply run this command:
 
-    rvm install ruby-2.0.0
+    rvm install 3.3.10
 
 Sometimes this will find a pre-compiled Ruby package for your Linux
 distribution, but sometimes it will need to compile Ruby from scratch
-(which takes about 15 minutes).
+(which takes about 15 minutes, if you got an error see [error while
+compiling](#error-while-compiling)).
 
-After Ruby 2.0.0 is installed, make it your default Ruby:
+After Ruby 3.3.10 is installed, make it your default Ruby:
 
-    rvm alias create default ruby-2.0.0
+    rvm alias create default ruby-3.3.10
 
 And tell your system to use it:
 
@@ -98,8 +104,9 @@ To preview the website in your local browser, make sure you're in the
 
     make preview
 
-This will compile the site (takes 5 to 10 minutes; see the speed up
-instructions and then print the a message like this:
+This will compile the site (takes 5 to 10 minutes; see [the speed-up
+instructions](#fast-partial-previews-or-builds)) and then print a
+message like this:
 
     Server address: http://0.0.0.0:4000
     Server running... press ctrl-c to stop.
@@ -127,7 +134,7 @@ directory.  The following alternative options are available:
 
 #### Fast Partial Previews Or Builds
 
-In order to preview some changes faster, you can disable all plugins and
+In order to preview some changes faster (such as markup and CSS), you can disable all plugins and
 languages except those you need by prefixing the `ENABLED_LANGS` and
 `ENABLED_PLUGINS` environment variables to your command line.  For
 example, do this to disable everything:
@@ -143,7 +150,7 @@ Then to enable some plugins or languages, you can add them back in.
 For example:
 
     ## Slower (but still pretty fast) build and test
-    ENABLED_PLUGINS="events autocrossref" ENABLED_LANGS="en fr" make -i valid
+    ENABLED_PLUGINS="autocrossref" ENABLED_LANGS="en fr" make -i valid
 
 Plugins include:
 
@@ -151,12 +158,11 @@ Plugins include:
 |--------------|---------|----------------|------------------------
 | alerts       | 5       | --             | Network alert pages
 | autocrossref | 90      | --             | Developer documentation
+| bips         | 40      | GitHub.com     | Bitcoin Improvement Proposals
 | contributors | 5       | GitHub.com     | Contributor listings
-| events       | 5       | Google Maps    | Events page
 | glossary     | 30      | --             | Developer glossary
 | redirects    | 20      | --             | Redirects from old URLs
-| releases     | 10      | --             | Bitcoin Core release notes; Download
-page
+| releases     | 10      | --             | Bitcoin Core release notes; Download page
 | sitemap      | 10      | --             | /sitemap.xml
 
 Notes: some plugins interact with each other or with translations; for example
@@ -187,3 +193,29 @@ before building you preview:
 You can also add this line to your `~/.bashrc` file if you frequently
 build site previews so that you don't have to remember to run it for
 each shell.
+
+#### Error While Compiling
+
+If you got an error while compiling that looks like this:
+```
+Error running '__rvm_make -j8',
+please read /home/myusername/.rvm/log/1739938091_ruby-3.3.10/make.log
+
+There has been an error while running make. Halting the installation.
+```
+
+And if the the `make.log` file has these lines at the end:
+```
+make: *** [uncommon.mk:240: build-ext] Error 2
+++ return 2
+```
+
+Probably you need to run the following command to install a specific openssl dependency needed by ruby-3.3.10 compilation:
+```
+rvm pkg install openssl
+```
+
+Then install/compile ruby with the following command:
+```
+rvm install ruby-3.3.10 --with-openssl-dir=$HOME/.rvm/usr
+```

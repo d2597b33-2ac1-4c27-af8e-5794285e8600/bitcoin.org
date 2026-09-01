@@ -1,22 +1,30 @@
 ---
 # This file is licensed under the MIT License (MIT) available on
-# http://opensource.org/licenses/MIT.
+# https://opensource.org/licenses/MIT.
 
 layout: base-core
 lang: en
 columns: 1
 id: bitcoin-core-requirements
-title: Requirements And Warnings - Bitcoin Core
+title: Requirements and Warnings - Bitcoin Core
 breadcrumbs:
   - bitcoin
   - bcc
   - bcc features
   - Requirements
 ---
-# Bitcoin Core Requirements And Warnings
-{:.not-displayed}
 
-![Bitcoin Core requirements and warnings](/img/bitcoin-core/slider-warning.svg)
+<div class="hero">
+<div class="container hero-container" markdown="block">
+
+# Bitcoin Core Requirements and Warnings
+</div>
+</div>
+
+<div class="bitcore-content clearfix">
+<div class="container" markdown="block">
+
+![Bitcoin Core requirements and warnings](/img/bitcoin-core/slider-warning.svg?{{site.time | date: '%s'}})
 
 {% include bitcoin-core/download-bitcoin-core.html %}
 
@@ -27,10 +35,11 @@ your bitcoins, meet higher [minimum system
 requirements](#system-requirements), and beware of some [possible
 problems](#possible-problems).
 
-![Warning icon](/img/icons/icon_warning.svg)
+<div class="warning" markdown="block">
 **No matter what Bitcoin software you use,** you should never
 buy more bitcoins than you can afford to lose. Bitcoin is still an
 experimental system and bitcoins remain a risky investment.
+</div>
 
 ## Wallet Responsibility Checklist
 
@@ -61,14 +70,14 @@ help].
 
 ## System Requirements
 
-{% assign DISK='<span class="fa fa-li fa-hdd-o fa-2x"></span> **Disk space**<br>' %}
-{% assign DOWNLOAD='<span class="fa fa-li fa-download fa-2x"></span> **Download**<br>' %}
-{% assign UPLOAD='<span class="fa fa-li fa-upload fa-2x"></span> **Upload**<br>' %}
-{% assign MEMORY='<span class="fa fa-li fa-database fa-2x"></span> **Memory (RAM)**<br>' %}
-{% assign SYSTEM='<span class="fa fa-li fa-desktop fa-2x"></span> **System**<br>' %}
-{% assign OS='<span class="fa fa-li fa-windows fa-2x"></span> **Operating system**<br>' %}
+{% assign DISK='<span class="accordion-icon disk-icon"></span> **Disk space**<br>' %}
+{% assign DOWNLOAD='<span class="accordion-icon download-icon"></span> **Download**<br>' %}
+{% assign UPLOAD='<span class="accordion-icon upload-icon"></span> **Upload**<br>' %}
+{% assign MEMORY='<span class="accordion-icon memory-icon"></span> **Memory (RAM)**<br>' %}
+{% assign SYSTEM='<span class="accordion-icon system-icon"></span> **System**<br>' %}
+{% assign OS='<span class="accordion-icon os-icon"></span> **Operating system**<br>' %}
 {% assign FOOTNOTE='<b>*</b>' %}
-{% capture INITIAL_DOWNLOAD %}<b>*</b> Plus a one-time {{site.text.chain_gb}} GB download the first time you start Bitcoin Core.{% endcapture %}
+{% capture INITIAL_DOWNLOAD %}<p class="notation"><b>*</b> Plus a one-time {{site.text.chain_gb}} GB download the first time you start Bitcoin Core.</p>{% endcapture %}
 
 <div markdown="block" class="two-column-list" id="system-requirements-accordion">
 
@@ -76,7 +85,7 @@ help].
 
 <div markdown="block">
 
-{:.fa-ul}
+{:.system-requirements-list.clearfix}
 - {{DISK}} {{site.text.bitcoin_datadir_gb}} GB
 
 - {{DOWNLOAD}} 250 MB/day (8 GB/month){{FOOTNOTE}}
@@ -85,16 +94,15 @@ help].
 
 - {{MEMORY}} 512 MB
 
-- {{SYSTEM}} Desktop<br
-  >Laptop<br
-  >[Some ARM chipsets][wiki bitcoin core compatible devices arm] >1 GHz
+- {{SYSTEM}} Desktop<br>
+  Laptop<br>
+  [Some ARM chipsets][wiki bitcoin core compatible devices arm] >1 GHz
 
-- {{OS}} Windows 7/8.x<br
-  >Mac OS X<br
-  >Linux<br
-  >Some BSDs
+- {{OS}} Windows 10+<br>
+  macOS 14+<br>
+  Linux<br>
+  Some BSDs
 
-<br class="clear">
 
 {{INITIAL_DOWNLOAD}}
 
@@ -105,7 +113,7 @@ help].
 
 <div markdown="block">
 
-{:.fa-ul}
+{:.system-requirements-list.clearfix}
 - {{DISK}} {{site.text.bitcoin_datadir_gb_pruned}} GB
 
 - {{DOWNLOAD}} 150 MB/day (5 GB/month){{FOOTNOTE}}
@@ -114,16 +122,15 @@ help].
 
 - {{MEMORY}} 256 MB
 
-- {{SYSTEM}} Desktop<br
-  >Laptop<br
-  >[Most ARM chipsets][wiki bitcoin core compatible devices arm]
+- {{SYSTEM}} Desktop<br>
+  Laptop<br>
+  [Most ARM chipsets][wiki bitcoin core compatible devices arm]
 
-- {{OS}} Windows 7/8.x<br
-  >Mac OS X<br
-  >Linux<br
-  >Some BSDs
+- {{OS}} Windows 10+<br>
+  macOS 14+<br>
+  Linux<br>
+  Some BSDs
 
-<br class="clear">
 
 {{INITIAL_DOWNLOAD}}
 
@@ -136,24 +143,23 @@ help].
 
 <div markdown="block">
 
-{:.fa-ul}
+{:.system-requirements-list.clearfix}
 - {{DISK}} {{site.text.bitcoin_datadir_gb}} GB
 
 - {{DOWNLOAD}} 500 MB/day (15 GB/month){{FOOTNOTE}}
 
 - {{UPLOAD}} 5 GB/day (150 GB/month)
 
-- {{MEMORY}} 1 GB
+- {{MEMORY}} 2 GB
 
-- {{SYSTEM}} Desktop<br
-  >Laptop<br
-  >[Some ARM chipsets][wiki bitcoin core compatible devices arm] >1 GHz
+- {{SYSTEM}} Desktop<br>
+  Laptop<br>
+  [Some ARM chipsets][wiki bitcoin core compatible devices arm] >1 GHz
 
-- {{OS}} Windows 7/8.x<br
-  >Mac OS X<br
-  >Linux
+- {{OS}} Windows 10+<br>
+  macOS 14+<br>
+  Linux
 
-<br class="clear">
 
 {{INITIAL_DOWNLOAD}}
 
@@ -168,15 +174,17 @@ help].
 
 <div class="not-displayed">
   <div id="backup_your_keys" title="Backup Your Keys" markdown="block">
-  By default, you need to backup Bitcoin Core after every 100
-  transactions.  This includes both transactions you send as well as
-  payments you request (whether or not you actually received the payment).
+  Bitcoin Core uses HD (hierarchical deterministic) wallets, so a
+  single backup is enough to recover your bitcoins at any time.
 
-  For example, you need to backup after sending 33 payments and requesting
-  67 payments (even though you only received 60 payments).
+  Regular backups (for example, weekly) are still recommended to
+  preserve wallet metadata such as labels, which cannot be recovered
+  from a blockchain rescan.
 
-  Bitcoin Core can be configured to allow you to go more transactions
-  between backups.  See the [`-keypool` setting][bcc configuration].
+  After encrypting your wallet or changing its passphrase, make a new
+  backup immediately: encryption generates a new seed, and bitcoins
+  received by it cannot be recovered from earlier backups.
+
   </div>
 
   <div id="secure_your_wallet" title="Secure Your Wallet" markdown="block">
@@ -219,11 +227,11 @@ help].
   </div>
 </div>
 
-<br class="clear big">
-<div class="prevnext">
-<span markdown="1">**Previous Feature**<br>[Privacy][bcc privacy]</span>
-<span markdown="1">**Next feature**<br>[User interface][bcc user interface]</span>
+<div class="prevnext" markdown="block">
+[PREV][bcc privacy]
+[NEXT][bcc user interface]
 </div>
-<br class="clear">
 
 {% include references.md %}
+</div>
+</div>

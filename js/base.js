@@ -1,5 +1,5 @@
 // This file is licensed under the MIT License (MIT) available on
-// http://opensource.org/licenses/MIT.
+// https://opensource.org/licenses/MIT.
 
 // This file should be used only for javascript code
 // necessary for all pages to work properly.
@@ -142,15 +142,23 @@ function onTouchClick(e, callback, callbackClick) {
 }
 
 function mobileMenuShow(e) {
-  // Show the mobile menu when the visitors touch the menu icon.
-  var show = function() {
-    var mm = document.getElementById('menusimple');
-    var ml = document.getElementById('langselect');
-    mm.style.display = ml.style.display = (mm.style.display === 'block') ? '' : 'block';
-    addClass(mm, 'menutap');
-    cancelEvent(e);
-  };
-  onTouchClick(e, show);
+    var show = function() {
+        var mm = document.getElementById('menusimple');
+        var ml = document.getElementById('langselect');
+        var display = (mm.style.display === 'block') ? '' : 'block';
+
+        mm.style.display = display;
+
+        // Some pages, such as BIP pages, have no language selector.
+        if (ml) {
+            ml.style.display = display;
+        }
+
+        addClass(mm, 'menutap');
+        cancelEvent(e);
+    };
+
+    onTouchClick(e, show);
 }
 
 function mobileMenuHover(e) {
@@ -164,14 +172,12 @@ function mobileMenuHover(e) {
       while (p.parentNode.nodeName === 'UL' || p.parentNode.nodeName === 'LI') p = p.parentNode;
       for (var i = 0, nds = p.getElementsByTagName('LI'), n = nds.length; i < n; i++) {
         if (nds[i] === t.parentNode) continue;
-        removeClass(nds[i], 'active');
         if (hasSubItems(nds[i])) continue;
         removeClass(nds[i], 'hover');
       }
       while (t !== p) {
         if (t.nodeName === 'LI') {
           fn(t, 'hover');
-          fn(t, 'active');
         }
         t = t.parentNode;
       }
@@ -206,78 +212,109 @@ function addAnchorLinks() {
   }
 }
 
+/* Start dark mode toggler */
+function toggleDarkMode() { 
+
+//   var toggleSwitch = document.querySelector('.dark-theme-toggle input[type="checkbox"]');
+//   var currentTheme = localStorage.getItem('theme');
+
+//   if (currentTheme) {
+//     document.documentElement.setAttribute('data-theme', currentTheme);
+
+//     if (currentTheme === 'dark') {
+//       toggleSwitch.checked = true;
+//     }
+
+//   }
+
+//   function switchTheme(e) {
+//     if (e.target.checked) {
+//       document.documentElement.setAttribute('data-theme', 'dark');
+//       localStorage.setItem('theme', 'dark');
+//     }
+//     else {
+//       document.documentElement.setAttribute('data-theme', 'default');
+//       localStorage.setItem('theme', 'default');
+//     }
+//   }
+
+//   toggleSwitch.addEventListener('change', switchTheme, false);
+
+}
+/* End dark mode toggler */
+
 /* jshint ignore:start */
 
  function _gaLt(event) {
 
-	/* If GA is blocked or not loaded, or not main|middle|touch click then don't track */
-	if (!ga.hasOwnProperty("loaded") || ga.loaded != true || (event.which != 1 && event.which != 2)) {
-		return;
-	}
+  /* If GA is blocked or not loaded, or not main|middle|touch click then don't track */
+  if (!ga.hasOwnProperty("loaded") || ga.loaded != true || (event.which != 1 && event.which != 2)) {
+    return;
+  }
 
-	var el = event.srcElement || event.target;
+  var el = event.srcElement || event.target;
 
-	/* Loop up the DOM tree through parent elements if clicked element is not a link (eg: an image inside a link) */
-	while (el && (typeof el.tagName == 'undefined' || el.tagName.toLowerCase() != 'a' || !el.href)) {
-		el = el.parentNode;
-	}
+  /* Loop up the DOM tree through parent elements if clicked element is not a link (eg: an image inside a link) */
+  while (el && (typeof el.tagName == 'undefined' || el.tagName.toLowerCase() != 'a' || !el.href)) {
+    el = el.parentNode;
+  }
 
-	/* if a link with valid href has been clicked */
-	if (el && el.href) {
+  /* if a link with valid href has been clicked */
+  if (el && el.href) {
 
-		var link = el.href;
+    var link = el.href;
 
-		/* Only if it is an external link */
-		if (link.indexOf(location.host) == -1 && !link.match(/^javascript\:/i)) {
+    /* Only if it is an external link */
+    if (link.indexOf(location.host) == -1 && !link.match(/^javascript\:/i)) {
 
-			/* Is actual target set and not _(self|parent|top)? */
-			var target = (el.target && !el.target.match(/^_(self|parent|top)$/i)) ? el.target : false;
+      /* Is actual target set and not _(self|parent|top)? */
+      var target = (el.target && !el.target.match(/^_(self|parent|top)$/i)) ? el.target : false;
 
-			/* Assume a target if Ctrl|shift|meta-click */
-			if (event.ctrlKey || event.shiftKey || event.metaKey || event.which == 2) {
-				target = "_blank";
-			}
+      /* Assume a target if Ctrl|shift|meta-click */
+      if (event.ctrlKey || event.shiftKey || event.metaKey || event.which == 2) {
+        target = "_blank";
+      }
 
-			var hbrun = false; // tracker has not yet run
+      var hbrun = false; // tracker has not yet run
 
-			/* HitCallback to open link in same window after tracker */
-			var hitBack = function() {
-				/* run once only */
-				if (hbrun) return;
-				hbrun = true;
-				window.location.href = link;
-			};
+      /* HitCallback to open link in same window after tracker */
+      var hitBack = function() {
+        /* run once only */
+        if (hbrun) return;
+        hbrun = true;
+        window.location.href = link;
+      };
 
-			if (target) { /* If target opens a new window then just track */
-				ga(
-					"send", "event", "Outgoing Links", link,
-					document.location.pathname + document.location.search
-				);
-			} else { /* Prevent standard click, track then open */
-				event.preventDefault ? event.preventDefault() : event.returnValue = !1;
-				/* send event with callback */
-				ga(
-					"send", "event", "Outgoing Links", link,
-					document.location.pathname + document.location.search, {
-						"hitCallback": hitBack
-					}
-				);
+      if (target) { /* If target opens a new window then just track */
+        ga(
+          "send", "event", "Outgoing Links", link,
+          document.location.pathname + document.location.search
+        );
+      } else { /* Prevent standard click, track then open */
+        event.preventDefault ? event.preventDefault() : event.returnValue = !1;
+        /* send event with callback */
+        ga(
+          "send", "event", "Outgoing Links", link,
+          document.location.pathname + document.location.search, {
+            "hitCallback": hitBack
+          }
+        );
 
-				/* Run hitCallback again if GA takes longer than 1 second */
-				setTimeout(hitBack, 1000);
-			}
-		}
-	}
+        /* Run hitCallback again if GA takes longer than 1 second */
+        setTimeout(hitBack, 1000);
+      }
+    }
+  }
 }
 
 function trackOutgoingLinks() {
-	if (navigator.doNotTrack != "yes" && navigator.doNotTrack != "1" && window.doNotTrack != "1" && navigator.msDoNotTrack != "1") {
-		var _w = window;
-		/* Use "click" if touchscreen device, else "mousedown" */
-		var _gaLtEvt = ("ontouchstart" in _w) ? "click" : "mousedown";
-		/* Attach the event to all clicks in the document after page has loaded */
-		_w.addEventListener ? _w.addEventListener("load", function() {document.body.addEventListener(_gaLtEvt, _gaLt, !1)}, !1) : _w.attachEvent && _w.attachEvent("onload", function() {document.body.attachEvent("on" + _gaLtEvt, _gaLt)});
-	}
+  if (navigator.doNotTrack != "yes" && navigator.doNotTrack != "1" && window.doNotTrack != "1" && navigator.msDoNotTrack != "1") {
+    var _w = window;
+    /* Use "click" if touchscreen device, else "mousedown" */
+    var _gaLtEvt = ("ontouchstart" in _w) ? "click" : "mousedown";
+    /* Attach the event to all clicks in the document after page has loaded */
+    _w.addEventListener ? _w.addEventListener("load", function() {document.body.addEventListener(_gaLtEvt, _gaLt, !1)}, !1) : _w.attachEvent && _w.attachEvent("onload", function() {document.body.attachEvent("on" + _gaLtEvt, _gaLt)});
+  }
 }
 
 /* jshint ignore:end */

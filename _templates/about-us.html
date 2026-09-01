@@ -1,116 +1,458 @@
 ---
 # This file is licensed under the MIT License (MIT) available on
-# http://opensource.org/licenses/MIT.
+# https://opensource.org/licenses/MIT.
 
-layout: base
+layout: about-sidebar
 id: about-us
 ---
-{% if site.env.BITCOINORG_BUILD_TYPE %}
-<!-- Note: this file is built non-deterministically -->
-<h1>{% translate pagetitle %}</h1>
-<p class="summary">{% translate pagedesc %}</p>
 
-<h2 id="own">{% translate own %}</h2>
-<p>{% translate owntxt %}</p>
-{% case page.lang %}
-{% when 'id' or 'da' or 'de' or 'es' or 'fr' or 'it' or 'hu' or 'nl' or 'pl' or 'pt_BR' or 'ro' or 'sl' or 'sv' or 'tr' or 'el' or 'bg' or 'ru' or 'uk' or 'ar' or 'fa' or 'hi' or 'ko' or 'ja' or 'zh_CN' or 'zh_TW' %}
-{% else %}
-  <p>{% translate owntxt2 %}</p>
-  <p>{% translate owntxt3 %}</p>
-  <p>{% translate owntxt4 %}</p>
-{% endcase %}
-
-<h2 id="control">{% translate control %}</h2>
-<p>{% translate controltxt %}</p>
-
-<h2 id="mission">{% translate mission %}</h2>
-<ul>
-  <li>{% translate missiontxt1 %}</li>
-  <li>{% translate missiontxt2 %}</li>
-  <li>{% translate missiontxt3 %}</li>
-  <li>{% translate missiontxt4 %}</li>
-  <li>{% translate missiontxt5 %}</li>
-  <li>{% translate missiontxt6 %}</li>
-  <li>{% translate missiontxt7 %}</li>
-</ul>
-
-<h2 id="help">{% translate help %}</h2>
-<p>{% translate helptxt %}</p>
-
-<h3 id="maintenance">{% translate maintenance %}</h3>
-
-<div class="credit">
-  <p><a href="https://github.com/wbnns">Will Binns</a><span>Website maintainer</span></p>
-  <p><a href="https://github.com/crwatkins">Craig Watkins</a><span>Wallet maintainer</span></p>
-</div>
-
-<h3 id="sponsorship">{% translate sponsorship %}</h3>
-
-<div class="credit">
-  <p><a href="https://bitcoinfoundation.org/">The Bitcoin Foundation</a><span>2014 - 2015</span></p>
-</div>
-
-<h3 id="translation">{% translate translation %}</h3>
-
-<div class="credit">
-  <p>Ar Vicco<span>Russian</span></p>
-  <p>Simon Alexander Hinterreiter<span>German</span></p>
-  <p>Jacob Burenstam<span>Swedish</span></p>
-  <p>Péter Kemenczés<span>Hungarian</span></p>
-  <p>Matija Mazi<span>Slovenian</span></p>
-  <p>Mihai Onosie<span>Romanian</span></p>
-  <p>Boštjan Pirnar<span>Slovenian</span></p>
-  <p>Luigigiuseppe Prosperi<span>Italian</span></p>
-  <p>Thomas Pryds<span>Danish</span></p>
-</div>
-
-<h3 id="service_contributors">{% translate service_contributors %}</h3>
-
-<div class="credit">
-  <p><a href="https://www.browserstack.com/">BrowserStack</a><span>Browser testing</span></p>
-  <p><a href="https://github.com/">GitHub</a><span>Repository hosting</span></p>
-  <p><a href="https://www.transifex.com/">Transifex</a><span>Translation tools</span></p>
-  <p><a href="https://travis-ci.org/">Travis CI</a><span>Continuous integration</span></p>
-</div>
-
-<h3 id="inactive-contributors">{% translate inactive_contributors %}</h3>
-
-<div class="credit">
-  <p><a href="https://github.com/saivann">Saïvann Carignan</a><span>Website maintainer</span></p>
-  <p><a href="https://github.com/instagibbs">Greg Sanders</a><span>Documentation writing</span></p>
-  <p><a href="https://github.com/harding">David A. Harding</a><span>Documentation writing</span></p>
-</div>
-
-<h3 id="owners">{% translate owners %}</h3>
-
-<div class="credit">
-  <p><a href="https://github.com/cobra-bitcoin">Cøbra</a><span>Co-Owner</span></p>
-  <p><a href="https://github.com/theymos">theymos</a><span>Co-Owner</span></p>
-</div>
-
-<h3 id="github">{% translate github %}</h3>
-
-<div class="contributors">
-  {% for c in site.sitecontributors %}
-  <div>
-    <div><a{% if c.login %} href="https://github.com/{{c.login}}"{% endif %}>{{ c.name | htmlescape }}</a></div>
-    <div>({{ c.contributions }})</div>
+<div class="toccontent-block boxexpand expanded">
+  <h3 class="contributor-title" id="sponsorship">{% translate sponsorship %}</h3>
+  <div class="contributor-row">
+    <p class="contributor">
+      <span class="contributor-name">The Bitcoin Foundation</span>
+      <span>2014 - 2015</span>
+    </p>
+    <p class="contributor">
+      <span class="contributor-name">Paxful</span>
+      <span>2018</span>
+    </p>
   </div>
-  {% endfor %}
 </div>
-{% else %}
-{% comment %}
-<!-- if you've cloned bitcoin.org, feel free to fill in your own About
-Us below. It would be appreciated it if you link back to Bitcoin.org,
-but please make it clear that your site is not affiliated with
-Bitcoin.org.
 
-It would also be appreciated if you would remove our names and email
-addresses from the README.md file in the top-level directory.  -->
-{% endcomment %}
-<h1>About this site</h1>
+<div class="toccontent-block boxexpand expanded">
+  <h3 class="contributor-title" id="translations-realname">{% translate translations_realname %}</h3>
+  <div class="contributor-row">
+    <p class="contributor">Ar Vicco
+      <br>
+      <span>Russian</span>
+    </p>
+    <p class="contributor">Simon Alexander Hinterreiter
+      <br>
+      <span>German</span>
+    </p>
+    <p class="contributor">Jacob Burenstam
+      <br>
+      <span>Swedish</span>
+    </p>
+    <p class="contributor">Péter Kemenczés
+      <br>
+      <span>Hungarian</span>
+    </p>
+    <p class="contributor">Matija Mazi
+      <br>
+      <span>Slovenian</span>
+    </p>
+    <p class="contributor">Mihai Onosie
+      <br>
+      <span>Romanian</span>
+    </p>
+    <p class="contributor">Boštjan Pirnar
+      <br>
+      <span>Slovenian</span>
+    </p>
+    <p class="contributor">Luigigiuseppe Prosperi
+      <br>
+      <span>Italian</span>
+    </p>
+    <p class="contributor">Thomas Pryds
+      <br>
+      <span>Danish</span>
+    </p>
+    <p class="contributor">Pavle Djordjevic
+      <br>
+      <span>Serbian</span>
+    </p>
+  </div>
+</div>
 
-This site includes content originally published on <a
-href="https://bitcoin.org">Bitcoin.org</a>, but it is not affiliated with
-Bitcoin.org.
-{% endif %}
+<div class="toccontent-block boxexpand expanded">
+  <h3 class="contributor-title" id="translations-transifexname">{% translate translations_transifexname %}</h3>
+  <div class="contributor-row">
+    <p class="contributor-language">Arabic
+      <span class="contributor-name">MhmdX</span>
+        <span>(1204)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(556)</span>
+      <span class="contributor-name">Yaziris</span>
+        <span>(179)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(127)</span>
+      <span class="contributor-name">trior</span>
+        <span>(72)</span>
+    </p>
+    <p class ="contributor-language">Bulgarian
+      <span class="contributor-name">RaidenBG</span>
+        <span>(867)</span>
+      <span class="contributor-name">smilybg</span>
+        <span>(560)</span>
+      <span class="contributor-name">plamenka</span>
+        <span>(482)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(134)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(130)</span>
+    </p>
+    <p class ="contributor-language">Chinese(China)
+      <span class="contributor-name">Henray0607</span>
+        <span>(2889)</span>
+      <span class="contributor-name">echo4py</span>
+        <span>(1197)</span>
+      <span class="contributor-name">bitxf</span>
+        <span>(1003)</span>
+      <span class="contributor-name">amore111</span>
+        <span>(723)</span>
+      <span class="contributor-name">xudababl</span>
+        <span>(656)</span>
+    </p>
+    <p class ="contributor-language">Chinese(Taiwan)
+      <span class="contributor-name">FabaoTAN</span>
+        <span>(1371)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(502)</span>
+      <span class="contributor-name">poqlas</span>
+        <span>(232)</span>
+      <span class="contributor-name">jftsai</span>
+        <span>(162)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(158)</span>
+    </p>
+    <p class ="contributor-language">Croatian
+      <span class="contributor-name">Trofo</span>
+        <span>(303)</span>
+      <span class="contributor-name">parazyd</span>
+        <span>(163)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(76)</span>
+      <span class="contributor-name">VedranID</span>
+        <span>(73)</span>
+    </p>
+    <p class ="contributor-language">Danish
+      <span class="contributor-name">pryds</span>
+        <span>(1943)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(158)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(109)</span>
+      <span class="contributor-name">Altech</span>
+        <span>(14)</span>
+    </p>
+    <p class ="contributor-language">Dutch
+      <span class="contributor-name">Nienke84</span>
+        <span>(827)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(710)</span>
+      <span class="contributor-name">JurgenH</span>
+        <span>(656)</span>
+      <span class="contributor-name">StefanSlings</span>
+        <span>(240)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(158)</span>
+    </p>
+    <p class ="contributor-language">French
+      <span class="contributor-name">saivann</span>
+        <span>(2772)</span>
+      <span class="contributor-name">yahoe.001</span>
+        <span>(527)</span>
+      <span class="contributor-name">hf</span>
+        <span>(242)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(158)</span>
+      <span class="contributor-name">Ethicnology</span>
+        <span>(110)</span>
+    </p>
+    <p class ="contributor-language">German
+      <span class="contributor-name">klicman</span>
+        <span>(3622)</span>
+      <span class="contributor-name">Komodorpudel</span>
+        <span>(3060)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(744)</span>
+      <span class="contributor-name">saddleburner</span>
+        <span>(225)</span>
+      <span class="contributor-name">schwefel</span>
+        <span>(175)</span>
+    </p>
+    <p class ="contributor-language">Greek
+      <span class="contributor-name">panos_12345</span>
+        <span>(1540)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(158)</span>
+      <span class="contributor-name">ksof80</span>
+        <span>(99)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(94)</span>
+      <span class="contributor-name">zoro1</span>
+        <span>(94)</span>
+    </p>
+    <p class ="contributor-language">Hebrew
+      <span class="contributor-name">zshilor</span>
+        <span>(5700)</span>
+      <span class="contributor-name">shimmy</span>
+        <span>(18)</span>
+      <span class="contributor-name">Stranik</span>
+        <span>(15)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(15)</span>
+      <span class="contributor-name">IttayEyal</span>
+        <span>(10)</span>
+    </p>
+    <p class ="contributor-language">Hindi
+      <span class="contributor-name">natsam</span>
+        <span>(1221)</span>
+      <span class="contributor-name">NilamDoc</span>
+        <span>(568)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(143)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(123)</span>
+      <span class="contributor-name">shadyrifles</span>
+        <span>(107)</span>
+    </p>
+    <p class ="contributor-language">Hungarian
+      <span class="contributor-name">kemipeti</span>
+        <span>(2252)</span>
+      <span class="contributor-name">CoinColors</span>
+        <span>(1882)</span>
+      <span class="contributor-name">Balaxi</span>
+        <span>(435)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(145)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(139)</span>
+    </p>
+    <p class ="contributor-language">Indonesian
+      <span class="contributor-name">cocoklogi</span>
+        <span>(1594)</span>
+      <span class="contributor-name">dissa_dissa</span>
+        <span>(1170)</span>
+      <span class="contributor-name">luke137</span>
+        <span>(512)</span>
+      <span class="contributor-name">anditto</span>
+        <span>(176)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(161)</span>
+    </p>
+    <p class ="contributor-language">Italian
+      <span class="contributor-name">saivann</span>
+        <span>(815)</span>
+      <span class="contributor-name">immalizzy</span>
+        <span>(680)</span>
+      <span class="contributor-name">dende93</span>
+        <span>(464)</span>
+      <span class="contributor-name">luggi5711</span>
+        <span>(450)</span>
+      <span class="contributor-name">GDP</span>
+        <span>(426)</span>
+    </p>
+    <p class ="contributor-language">Japanese
+      <span class="contributor-name">hakka</span>
+        <span>(5427)</span>
+      <span class="contributor-name">hitomiy</span>
+        <span>(1267)</span>
+      <span class="contributor-name">tsb</span>
+        <span>(819)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(509)</span>
+      <span class="contributor-name">miswo</span>
+        <span>(193)</span>
+    </p>
+    <p class ="contributor-language">Korean
+      <span class="contributor-name">thinkdank</span>
+        <span>(909)</span>
+      <span class="contributor-name">faustgrey</span>
+        <span>(428)</span>
+      <span class="contributor-name">sarakang90</span>
+        <span>(238)</span>
+      <span class="contributor-name">chohy</span>
+        <span>(156)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(148)</span>
+    </p>
+    <p class ="contributor-language">Persian
+      <span class="contributor-name">SamiraM</span>
+        <span>(1390)</span>
+      <span class="contributor-name">alireza9661</span>
+        <span>(300)</span>
+      <span class="contributor-name">misledlove</span>
+        <span>(263)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(210)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(154)</span>
+    </p>
+    <p class ="contributor-language">Polish
+      <span class="contributor-name">wymysl</span>
+        <span>(1061)</span>
+      <span class="contributor-name">vojcek</span>
+        <span>(612)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(168)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(152)</span>
+      <span class="contributor-name">LadyRoot</span>
+        <span>(92)</span>
+    </p>
+    <p class ="contributor-language">Portuguese(Brazil)
+      <span class="contributor-name">MTwomey</span>
+        <span>(630)</span>
+      <span class="contributor-name">mateusnds</span>
+        <span>(372)</span>
+      <span class="contributor-name">transifexuser</span>
+        <span>(226)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(173)</span>
+      <span class="contributor-name">uxdesigner</span>
+        <span>(168)</span>
+    </p>
+    <p class ="contributor-language">Romanian
+      <span class="contributor-name">CyrusV</span>
+        <span>(1431)</span>
+      <span class="contributor-name">motorina0</span>
+        <span>(275)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(148)</span>
+      <span class="contributor-name">FiR3</span>
+        <span>(118)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(110)</span>
+    </p>
+    <p class ="contributor-language">Russian
+      <span class="contributor-name">arvicco</span>
+        <span>(965)</span>
+      <span class="contributor-name">VladimirP</span>
+        <span>(763)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(643)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(348)</span>
+      <span class="contributor-name">Alex57</span>
+        <span>(102)</span>
+    </p>
+    <p class ="contributor-language">Serbian
+      <span class="contributor-name">nedved</span>
+        <span>(1568)</span>
+      <span class="contributor-name">RugbyCode</span>
+        <span>(175)</span>
+      <span class="contributor-name">casperBGD</span>
+        <span>(64)</span>
+      <span class="contributor-name">ivan993</span>
+        <span>(37)</span>
+    </p>
+    <p class ="contributor-language">Slovenian
+      <span class="contributor-name">mmazi</span>
+        <span>(1874)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(135)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(126)</span>
+      <span class="contributor-name">minimalB</span>
+        <span>(111)</span>
+    </p>
+    <p class ="contributor-language">Spanish
+      <span class="contributor-name">dalovar</span>
+        <span>(4140)</span>
+      <span class="contributor-name">zordycor</span>
+        <span>(689)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(590)</span>
+      <span class="contributor-name">fjrojasgarcia</span>
+        <span>(166)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(158)</span>
+    </p>
+    <p class ="contributor-language">Swedish
+      <span class="contributor-name">buren</span>
+        <span>(1485)</span>
+      <span class="contributor-name">nejlika</span>
+        <span>(1325)</span>
+      <span class="contributor-name">thedarer</span>
+        <span>(189)</span>
+      <span class="contributor-name">ordtrogen</span>
+        <span>(180)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(158)</span>
+    </p>
+    <p class ="contributor-language">Turkish
+      <span class="contributor-name">janberkjk</span>
+        <span>(656)</span>
+      <span class="contributor-name">uskumru</span>
+        <span>(522)</span>
+      <span class="contributor-name">gmercan</span>
+        <span>(443)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(366)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(158)</span>
+    </p>
+    <p class ="contributor-language">Ukrainian
+      <span class="contributor-name">DmytroR</span>
+        <span>(1805)</span>
+      <span class="contributor-name">kuzzmi</span>
+        <span>(398)</span>
+      <span class="contributor-name">pavlowd</span>
+        <span>(267)</span>
+      <span class="contributor-name">saivann</span>
+        <span>(66)</span>
+      <span class="contributor-name">grio</span>
+        <span>(63)</span>
+    </p>
+  </div>
+</div>
+
+
+<div class="toccontent-block boxexpand expanded">
+  <h3 class="contributor-title" id="service_contributors">{% translate service_contributors %}</h3>
+  <div class="contributor-row">
+    <p class="contributor">
+      <a class="contributor-name" href="https://www.browserstack.com/">BrowserStack</a>
+      <span>Browser testing</span>
+    </p>
+    <p class="contributor">
+      <a class="contributor-name" href="https://github.com/">GitHub</a>
+      <span>Repository hosting</span>
+    </p>
+    <p class="contributor">
+      <a class="contributor-name" href="https://www.transifex.com/">Transifex</a>
+      <span>Translation tools</span>
+    </p>
+    <p class="contributor">
+      <a class="contributor-name" href="https://www.travis-ci.com/">Travis CI</a>
+      <span>Continuous integration</span>
+    </p>
+  </div>
+</div>
+
+<div class="toccontent-block boxexpand expanded">
+  <h3 class="contributor-title" id="inactive-contributors">{% translate inactive_contributors %}</h3>
+  <div class="contributor-row">
+    <p class="contributor">
+      <a class="contributor-name" href="https://github.com/instagibbs">Greg Sanders</a>
+      <span>Documentation writing</span>
+    </p>
+  </div>
+</div>
+
+<div class="toccontent-block boxexpand expanded">
+  <h3 class="contributor-title" id="owners">{% translate owners %}</h3>
+  <div class="contributor-row">
+    <p class="contributor">
+      <a class="contributor-name" href="https://github.com/cobra-bitcoin">Cøbra</a>
+      <span>Owner</span>
+    </p>
+  </div>
+</div>
+
+<div class="toccontent-block boxexpand expanded">
+  <h3 class="contributor-title" id="github">{% translate github %}</h3>
+  <div class="contributor-row">
+    {% for c in site.sitecontributors %}
+    <div class="contributor">
+      <div>
+        <a class="contributor-name" {% if c.login %} href="https://github.com/{{c.login}}" {% endif %}>{{ c.name | htmlescape }}</a>
+      </div>
+      <div class="contributions">({{ c.contributions }})</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

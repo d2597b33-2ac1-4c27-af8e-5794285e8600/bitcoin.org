@@ -1,6 +1,6 @@
 ---
 # This file is licensed under the MIT License (MIT) available on
-# http://opensource.org/licenses/MIT.
+# https://opensource.org/licenses/MIT.
 
 id: bitcoin-core-privacy
 layout: base-core
@@ -38,73 +38,27 @@ third_party_privacy:
     tracks_amounts: "yes"
     tracks_ip_addresses: "yes"
 
-  - name: BitPay
-    css_class: bitpay
-    group: not-displayed
-
-    tracks_real_names: "yes"
-    knows_your_bitcoin_balance: "yes"
-    susceptible_to_taint_analysis: "no"
-    tracks_payments: "yes"
-    tracks_amounts: "yes"
-    tracks_ip_addresses: "yes"
-
-  - name: Blockchain.info
-    css_class: blockchain_info
-    group: not-displayed
-
-    tracks_real_names: "no"
-    knows_your_bitcoin_balance: "yes"
-    susceptible_to_taint_analysis: "yes"
-    tracks_payments: "yes"
-    tracks_amounts: "yes"
-    tracks_ip_addresses: "yes"
-
-  - name: Coinbase
-    css_class: coinbase
-    group: default-show
-
-    tracks_real_names: "yes"
-    knows_your_bitcoin_balance: "yes"
-    susceptible_to_taint_analysis: "no"
-    tracks_payments: "yes"
-    tracks_amounts: "yes"
-    tracks_ip_addresses: "yes"
-
-  - name: GreenAddress
-    css_class: greenaddress
-    group: not-displayed
-
-    tracks_real_names: "no"
-    knows_your_bitcoin_balance: "yes"
-    susceptible_to_taint_analysis: "yes"
-    tracks_payments: "yes"
-    tracks_amounts: "yes"
-    tracks_ip_addresses: "yes"
-
-  - name: Ninki
-    css_class: ninki
-    group: not-displayed
-
-    tracks_real_names: "no"
-    knows_your_bitcoin_balance: "yes"
-    susceptible_to_taint_analysis: "yes"
-    tracks_payments: "yes"
-    tracks_amounts: "yes"
-    tracks_ip_addresses: "yes"
 ---
-# Bitcoin Core's Excellent Privacy
-{:.not-displayed}
 
-![Excellent privacy](/img/bitcoin-core/slider-privacy.svg)
+<div class="hero">
+<div class="container hero-container" markdown="block">
+
+# Bitcoin Core's Excellent Privacy
+</div>
+</div>
+
+<div class="bitcore-content clearfix">
+<div class="container" markdown="block">
+
+![Excellent privacy](/img/bitcoin-core/slider-privacy.svg?{{site.time | date: '%s'}})
 
 {% include bitcoin-core/download-bitcoin-core.html %}
 
 > What if every time you spent or received cash, all the transaction
-> details were published to your Twitter or Facebook feed for all your
+> details were published to your social media feed for all your
 > friends to see? You probably wouldn't want to use cash any more.
 
-Every confirmed Bitcoin transaction is published to the block chain
+Every confirmed Bitcoin transaction is published to the blockchain
 where anyone can see it. So **why do people still use Bitcoin?** And why
 do many of them believe that Bitcoin is a private way of sending money?
 
@@ -112,7 +66,7 @@ One reason is that Bitcoin Core and some other Bitcoin software tries to
 avoid associating your real-world identity with the transactions you
 make. The difference looks like this:
 
-![Privacy difference: pseudonymous transactions](/img/bitcoin-core/privacy-difference.svg)
+![Privacy difference: pseudonymous transactions](/img/bitcoin-core/privacy-difference.svg?{{site.time | date: '%s'}})
 
 The second type of transaction (a pseudonymous transaction) only provides
 practical privacy if nobody can figure out that "5a35b" is really Alice.
@@ -127,8 +81,8 @@ privacy. They can increase it by mixing your transactions with those of
 other users; they can decrease it by tracking your activity and directly
 associating it with your real name or other identifying information.
 
-<p class="center service-choose">
-<a>Click an entry below to show it:</a>
+<div class="center service-choose">
+<p class="service-choose-title">Click an entry below to show it:</p>
 
 {% for service in page.third_party_privacy %}
   {% if service.name != 'Bitcoin Core' %}
@@ -142,9 +96,9 @@ associating it with your real name or other identifying information.
     >{{service.name}}</button>
   {% endif %}
 {% endfor %}
-</p>
+</div>
 
-<table class="privacy-comparison">
+<table class="privacy-comparison center">
 {% comment %}
 <!-- Don't overdo it!  Limit table to a total of seven content rows, with a
 maximum of five content rows in each category. -->
@@ -281,25 +235,25 @@ There are {{site.text.total_tx_count_in_millions}} million transactions on the B
 chain. How do you find which ones pay you?  Here are some common
 options:
 
-<table class="received_transactions">
+<table class="received_transactions center">
   <tr>
-    <td class="center" markdown="span">**Ask bankers**{:.fgred}<br
-      >They'll monitor your every transaction<br><br
-      ><button class="popup js" data-container="bitcoin_bank_receiving">Bitcoin banks</button></td>
+    <td class="center" markdown="span">**Ask bankers**{:.fgred}<br>
+      They'll monitor your every transaction<br><br>
+      <button class="popup js" data-container="bitcoin_bank_receiving">Bitcoin banks</button></td>
 
-    <td class="center" markdown="span">**Ask random nodes**{:.fgred}<br
-      >Some of which sell your data<br><br
-      ><button class="popup js" data-container="bloom_filter_receiving">P2P lightweight wallets</button></td>
+    <td class="center" markdown="span">**Ask random nodes**{:.fgred}<br>
+      Some of which sell your data<br><br>
+      <button class="popup js" data-container="bloom_filter_receiving">P2P lightweight wallets</button></td>
   </tr>
 
   <tr>
-    <td class="center" markdown="span">**Ask a free service**{:.fgred}<br
-      >(Actually, some do care about privacy)<br><br
-      ><button class="popup js" data-container="electrum_style_receiving">Client lightweight wallets</button></td>
+    <td class="center" markdown="span">**Ask a free service**{:.fgred}<br>
+      (Actually, some do care about privacy)<br><br>
+      <button class="popup js" data-container="electrum_style_receiving">Client lightweight wallets</button></td>
 
-    <td class="center" markdown="span">**Get all {{site.text.total_tx_count_in_millions}} million transactions**{:.fggreen}<br
-      >For **perfect** receiving privacy<br><br
-      >**Bitcoin Core**</td>
+    <td class="center" markdown="span">**Get all {{site.text.total_tx_count_in_millions}} million transactions**{:.fggreen}<br>
+      For **perfect** receiving privacy<br><br>
+      **Bitcoin Core**</td>
   </tr>
 </table>
 
@@ -314,10 +268,10 @@ against eavesdroppers for received transactions.
 
 ## Strong Privacy for Sent Transactions
 
-To put a transaction on the block chain, you must send it publicly---but
+To put a transaction on the blockchain, you must send it publicly---but
 how you send it can make a big difference.
 
-![Sending privacy](/img/bitcoin-core/sending-privacy.svg)
+![Sending privacy](/img/bitcoin-core/sending-privacy.svg?{{site.time | date: '%s'}})
 
 **Can you guess who made which transactions?** Nearly all peer-to-peer
 lightweight clients today make no attempt to obscure their sent
@@ -343,8 +297,8 @@ be able to [connect mobile clients][bcc user interface lightweight]
 to your Bitcoin Core full node for increased security and privacy
 wherever you go.
 
-{:.right-hanger}
-[Start using Tor today <span class="fa fa-external-link-square"></span>][setup tor]
+{:.center-hanger.center}
+[Start using Tor today][setup tor]
 
 
 ## Decentralized Peer Discovery
@@ -381,16 +335,14 @@ Bitcoin Core prefers decentralized peer discovery, so after the first
 time it starts, it no longer has to trust the centralized authority.
 Isn't that worth occasionally starting up a few seconds slower?
 
-<br class="clear big">
-<div class="prevnext">
-<span markdown="1">**Previous Feature**<br>[Validation][bcc validation]</span>
-<span markdown="1">**Next feature**<br>[Requirements][bcc requirements]</span>
+<div class="prevnext" markdown="block">
+[PREV][bcc validation]
+[NEXT][bcc requirements]
 </div>
-<br class="clear">
 
 <div class="not-displayed">
   <div id="bitcoin_bank_receiving" title="Bitcoin Bank Receiving Privacy" markdown="block">
-  ![Bitcoin Core receiving privacy features](/img/bitcoin-core/bank-receiving-privacy.svg)
+  ![Bitcoin Core receiving privacy features](/img/bitcoin-core/bank-receiving-privacy.svg?{{site.time | date: '%s'}})
 
   When you receive bitcoins to a Bitcoin bank, the money is sent to one of
   the bank's addresses---not your own---which can give you excellent
@@ -406,7 +358,7 @@ Isn't that worth occasionally starting up a few seconds slower?
   </div>
 
   <div id="bloom_filter_receiving" title="Bloom Filter Privacy" markdown="block">
-  ![Receiving privacy](/img/bitcoin-core/receiving-privacy.svg)
+  ![Receiving privacy](/img/bitcoin-core/receiving-privacy.svg?{{site.time | date: '%s'}})
 
   By only asking for payments related to your wallet, plus maybe a few
   others as bloom filter camouflage, lightweight wallets may reveal who you
@@ -423,11 +375,11 @@ Isn't that worth occasionally starting up a few seconds slower?
   </div>
 
   <div id="electrum_style_receiving" title="Client Lightweight Wallet Receiving Privacy" markdown="block">
-  ![Electrum-style receiving privacy](/img/bitcoin-core/electrum-receiving-privacy.svg)
+  ![Electrum-style receiving privacy](/img/bitcoin-core/electrum-receiving-privacy.svg?{{site.time | date: '%s'}})
 
   Some lightweight wallets don't connect to the Bitcoin peer-to-peer (P2P)
   network.  Instead, they make a (usually secure) connection to a single
-  server that provides block chain data.
+  server that provides blockchain data.
 
   The wallet tells the server all of its addresses, and the server replies
   with all of the transactions that belong to the wallet.  This explicitly
@@ -445,12 +397,10 @@ Isn't that worth occasionally starting up a few seconds slower?
   </div>
 
   <div id="spv_decentralized_peer" title="P2P Decentralized Peer Discovery" markdown="block">
-  The following P2P lightweight wallets use decentralized peer discovery
-  by default.
+  We don't currently know of any P2P lightweight wallets that use
+  decentralized peer discovery by default.
 
-  - BreadWallet
-
-  If you know of another compliant lightweight wallet, please [tell us
+  If you know of a compliant lightweight wallet, please [tell us
   about it][docs issue].
   </div>
 
@@ -463,3 +413,5 @@ Isn't that worth occasionally starting up a few seconds slower?
 </div>
 
 {% include references.md %}
+</div>
+</div>

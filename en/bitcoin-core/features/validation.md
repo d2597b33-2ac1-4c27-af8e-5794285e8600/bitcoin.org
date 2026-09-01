@@ -1,6 +1,6 @@
 ---
 # This file is licensed under the MIT License (MIT) available on
-# http://opensource.org/licenses/MIT.
+# https://opensource.org/licenses/MIT.
 
 layout: base-core
 lang: en
@@ -13,10 +13,16 @@ breadcrumbs:
   - bcc features
   - Validation
 ---
-# Bitcoin Core Validation
-{:.not-displayed}
+<div class="hero">
+<div class="container hero-container" markdown="block">
 
-![Full validation](/img/bitcoin-core/slider-validation.svg)
+# Bitcoin Core Validation
+</div>
+</div>
+
+<div class="bitcore-content">
+<div class="container" markdown="block">
+![Full validation](/img/bitcoin-core/slider-validation.svg?{{site.time | date: '%s'}})
 
 {% include bitcoin-core/download-bitcoin-core.html %}
 
@@ -33,7 +39,7 @@ blocks that violate the 21 million bitcoin limit or which break other
 important rules.
 
 Users of other wallets don't get this level of security, so miners can
-trick them into accepting fabricated transactions or hijacked block chains.
+trick them into accepting fabricated transactions or hijacked blockchains.
 
 Why take that risk if you don't have to? Bitcoin Core provides
 the **best possible security against dishonest miners** along
@@ -81,9 +87,7 @@ real wallet?
   Core**{:.fggreen} users are not vulnerable because they control their
   own private keys.
 
-<div class="callout" markdown="block">
 Direct theft is likely the leading cause of stolen bitcoins so far.
-</div>
 
 ### Real Example
 
@@ -142,7 +146,7 @@ that the operators of StrongCoin could steal bitcoins from their users
 at any time even though the users supposedly controlled their own
 private keys.
 
-**Learn More:** [OzCoin Hacked, Stolen Funds Seized and Returned by StrongCoin](https://bitcoinmagazine.com/4273/ozcoin-hacked-stolen-funds-seized-and-returned-by-strongcoin/)
+**Learn More:** [OzCoin Hacked, Stolen Funds Seized and Returned by StrongCoin](https://bitcoinmagazine.com/business/ozcoin-hacked-stolen-funds-seized-and-returned-by-strongcoin-1366822516)
 </td>
 </tr>
 
@@ -205,13 +209,13 @@ safety][]
 <td colspan="4" markdown="block">
 > Alice believes that there should never be more than 21 million
 > bitcoins---but one day she's tricked into buying "bitcoins" that
-> are only valid on a block chain with permanent 10% inflation.
+> are only valid on a blockchain with permanent 10% inflation.
 
-- **Bitcoin bank**{:.fgred} users have to use whatever block chain the
+- **Bitcoin bank**{:.fgred} users have to use whatever blockchain the
   bank uses.  Banks can even profit from switching their users to a new
   chain and selling their users' bitcoins from the old chain.
 
-- **Lightweight (SPV) wallet**{:.fgred} users accept the block chain
+- **Lightweight (SPV) wallet**{:.fgred} users accept the blockchain
   they know about with the most proof of work. This lets the hash rate
   majority of miners force SPV wallet users off of Bitcoin.
 
@@ -227,7 +231,7 @@ The alternative is to allow miners to do whatever they want.
 ### Real Example
 
 In July 2015, several large Bitcoin miners accidentally produced an
-invalid block chain several blocks longer than the correct block chain.
+invalid blockchain several blocks longer than the correct blockchain.
 Some bank wallets and many SPV wallets accepted this longer chain,
 putting their users' bitcoins at risk.
 
@@ -274,7 +278,7 @@ mining income.
 
 <div class="callout" markdown="block">
 Unless you use Bitcoin Core, you can never be sure that your bitcoin balance
-is correct according to the block chain.
+is correct according to the blockchain.
 </div>
 
 ### Real Example
@@ -284,7 +288,7 @@ prevented some users of the lightweight BreadWallet from connecting to
 honest nodes. Since the spy nodes didn't relay transactions, BreadWallet
 users stopped receiving notification of new transactions.
 
-**Learn more:** [Chainalysis CEO Denies 'Sybil Attack' on Bitcoin's Network](http://www.coindesk.com/chainalysis-ceo-denies-launching-sybil-attack-on-bitcoin-network/)
+**Learn more:** [Chainalysis CEO Denies 'Sybil Attack' on Bitcoin's Network](https://web.archive.org/web/2015/https://www.coindesk.com/chainalysis-ceo-denies-launching-sybil-attack-on-bitcoin-network/)
 </td>
 </tr>
 
@@ -304,14 +308,14 @@ users stopped receiving notification of new transactions.
 This attack applies to **all Bitcoin wallets.**{:.fgred}
 
 The attack works because powerful miners have the ability to rewrite the
-block chain and replace their own transactions, allowing them to take
+blockchain and replace their own transactions, allowing them to take
 back previous payments.
 
 The cost of this attack depends on the percentage of total network hash
 rate the attacking miner controls. The more centralized mining becomes,
 the less expensive the attack for a powerful miner.
 
-![The cost of a chain rewrite](/img/bitcoin-core/en-confirmed-double-spend-cost.svg)
+![The cost of a chain rewrite](/img/bitcoin-core/en-confirmed-double-spend-cost.svg?{{site.time | date: '%s'}})
 
 ### Real Example
 
@@ -363,19 +367,19 @@ Bitcoin's rules for all those non-verifying users who outsourced their power.
 
 <table class="received_transactions center">
   <tr>
-    <td class="center" markdown="span">*Users of Bitcoin banks*<br
-      >**Trust bankers**{:.fgred}</td>
+    <td class="center" markdown="span">*Users of Bitcoin banks*<br>
+      **Trust bankers**{:.fgred}</td>
 
-    <td class="center" markdown="span">*Users of P2P lightweight wallets*<br
-    >**Trust miners**{:.fgred}</td>
+    <td class="center" markdown="span">*Users of P2P lightweight wallets*<br>
+    **Trust miners**{:.fgred}</td>
   </tr>
 
   <tr>
-    <td class="center" markdown="span">*Users of client lightweight wallets*<br
-    > **Trust "free" services**{:.fgred}</td>
+    <td class="center" markdown="span">*Users of client lightweight wallets*<br>
+    **Trust "free" services**{:.fgred}</td>
 
-    <td class="center" markdown="span">*Users of Bitcoin Core*<br
-    >**Enforce the rules**{:.fggreen}</td>
+    <td class="center" markdown="span">*Users of Bitcoin Core*<br>
+    **Enforce the rules**{:.fggreen}</td>
   </tr>
 </table>
 
@@ -393,7 +397,7 @@ Core users? Then it becomes easy for miners and banks to take control of
 Bitcoin, likely bringing to an end this {{bitcoin_age}} year experiment
 in decentralized currency.
 
-![History of Bitcoin](/img/bitcoin-core/history-of-bitcoin.svg)
+![History of Bitcoin](/img/bitcoin-core/history-of-bitcoin.svg?{{site.time | date: '%s'}})
 
 If you think **Bitcoin should remain decentralized,** the best thing you
 can do is [validate every payment you receive](#do-you-validate) using your own personal
@@ -421,7 +425,7 @@ Core right now:
    using the following screen in Bitcoin Core, your received
    transactions will be fully validated.
 
-    ![Bitcoin Core request payment](/img/bitcoin-core/unique-invoice.png)
+    ![Bitcoin Core request payment](/img/bitcoin-core/unique-invoice.png?{{site.time | date: '%s'}})
 
 2. **Use Bitcoin Core as a trusted peer for certain lightweight
    wallets.** Learn more on the [user interface][bcc user interface
@@ -433,8 +437,8 @@ Core right now:
    power users, businesses, and programmers. The [user interface][bcc
    user interface] page provides an overview, the [installation
    instructions][bandwidth sharing guide] can help you get started, and
-   the [RPC][]/[REST][] documentation can help you find specific
-   commands. If you're using [`getnewaddress`][rpc getnewaddress] to
+   the [RPC](https://developer.bitcoin.org/reference/rpc/) documentation can help you find specific
+   commands. If you're using [`getnewaddress`](https://developer.bitcoin.org/reference/rpc/getnewaddress.html) to
    create receiving addresses, your received transactions will be fully
    validated.
 
@@ -444,9 +448,9 @@ If you have any questions, please ask on the [forums][bcc forums] or
 
 
 <br class="clear big">
-<div class="prevnext">
-<span markdown="1">**Previous Feature**<br>[Feature Overview][bcc main]</span>
-<span markdown="1">**Next feature**<br>[Privacy][bcc privacy]</span>
+<div class="prevnext" markdown="block">
+[PREV][bcc main]
+[NEXT][bcc privacy]
 </div>
 <br class="clear">
 
@@ -461,7 +465,7 @@ If you have any questions, please ask on the [forums][bcc forums] or
   <div id="spv_wallets" title="SPV Wallets" markdown="block">
   **Simplified Payment Verification (SPV)** wallets are lightweight
   wallets that can verify whether or not a transaction is part of a block
-  without downloading the {{site.text.chain_gb}} GB block chain. However,
+  without downloading the {{site.text.chain_gb}} GB blockchain. However,
   they cannot verify whether or not the transaction is actually valid.
   (Only full validation nodes like Bitcoin Core can do that.)
 
@@ -475,3 +479,5 @@ If you have any questions, please ask on the [forums][bcc forums] or
 </div>
 
 {% include references.md %}
+</div>
+</div>

@@ -4,10 +4,17 @@ _site/
 ._*
 .Spotlight-V100
 .Trashes
-Icon?
 ehthumbs.db
 Thumbs.db
 .bundle
 vendor
 _cache
 .jekyll-metadata
+.jekyll-cache/
+.sass-cache/
+__pycache__/
+/bip/
+
+# To prevent accidental push of translations from
+# Transifex.
+.tx/translations/

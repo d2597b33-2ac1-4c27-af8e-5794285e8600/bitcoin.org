@@ -1,6 +1,6 @@
 {
   // JSHint Configuration File
-  // See http://jshint.com/docs/ for more details
+  // See https://jshint.com/docs/ for more details
 
   "maxerr"		: 200,
 
@@ -24,7 +24,7 @@
   "quotmark"		: false,
   "undef"		: true,
   "unused"		: false,
-  "strict"		: true,
+  "strict"		: false,
   "maxparams"		: false,
   "maxdepth"		: false,
   "maxstatements"	: false,
@@ -48,7 +48,7 @@
   "lastsemic"		: false,
   "laxbreak"		: false,
   "laxcomma"		: false,
-  "loopfunc"		: false,
+  "loopfunc"		: true,
   "multistr"		: false,
   "noyield"		: false,
   "notypeof"		: false,

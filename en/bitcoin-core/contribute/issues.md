@@ -1,6 +1,6 @@
 ---
 # This file is licensed under the MIT License (MIT) available on
-# http://opensource.org/licenses/MIT.
+# https://opensource.org/licenses/MIT.
 
 layout: base-core
 id: bitcoin-core-contribute-issues
@@ -13,14 +13,26 @@ breadcrumbs:
   - bcc contribute
   - Issues
 ---
+
+<div class="hero">
+<div class="container hero-container" markdown="block">
+
 # Contribute Bug Reports
+</div>
+</div>
+
+<div class="bitcore-content">
+<div class="container" markdown="block">
 
 If you discover a bug or other problem with Bitcoin Core, please report
-it.  The are two different processes, [responsible disclosure](#disclosure) for
+it.  There are two different processes, [responsible disclosure](#disclosure) for
 security bugs and [public issue tracking](#public-issue-tracking) for all other bugs.
 
-<span class="fa fa-exclamation-triangle"></span> **Please don't open an
-issue to ask for support.** See the [Get Help][bcc help] page instead.
+<div class="warning" markdown="block">
+
+**Please don't open an issue to ask for support.** See the [Get Help][bcc help] page instead.
+
+</div>
 
 <h2 id="disclosure">{% translate disclosure development %}</h2>
 
@@ -43,12 +55,12 @@ new issue] providing the information listed below.
 3. Any relevant entries from your `debug.log` file. Note, this file can
    contain private information, so review it before posting or ask in
    the issue to email it directly to a developer rather than posting
-   publicly. You can publicly post logs on a [0bin service][0bin]. By
+   publicly. By
    default, the `debug.log` can be found at the following locations:
 
     - Windows: `%APPDATA%\Bitcoin\debug.log`
 
-    - OS X: `$HOME/Library/Application Support/Bitcoin/debug.log`
+    - macOS: `$HOME/Library/Application Support/Bitcoin/debug.log`
 
     - Linux: `$HOME/.bitcoin/debug.log`
 
@@ -58,10 +70,14 @@ write a fix.  Providing more information and organizing it well helps
 significantly.
 
 <br class="clear big">
-<div class="prevnext">
-<span markdown="1">**Previous**<br>[Contribute overview][bcc contribute]</span>
-<span markdown="1">**Next**<br>[Code][bcc contribute code]</span>
+<div class="prevnext" markdown="block">
+
+[PREV][bcc contribute]
+[NEXT][bcc contribute code]
 </div>
 <br class="clear">
 
 {% include references.md %}
+
+</div>
+</div>

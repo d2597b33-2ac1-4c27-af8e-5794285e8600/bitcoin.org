@@ -1,6 +1,6 @@
 ---
 # This file is licensed under the MIT License (MIT) available on
-# http://opensource.org/licenses/MIT.
+# https://opensource.org/licenses/MIT.
 
 id: bitcoin-core-contribute-tech-support
 lang: en
@@ -13,7 +13,16 @@ breadcrumbs:
   - bcc contribute
   - Support
 ---
+
+<div class="hero">
+<div class="container hero-container" markdown="block">
+
 # Supporting Bitcoin Core Users
+</div>
+</div>
+
+<div class="bitcore-content">
+<div class="container" markdown="block">
 
 This site tells Bitcoin Core users where they can [go to find help][bcc
 help]---but that help is provided by volunteers like you. Many questions
@@ -21,7 +30,7 @@ are asked by complete newbies, so nearly everyone with any experience
 using Bitcoin Core can provide help.
 
 Before you start providing support, you may want to familiarize yourself
-with the available [documentation][bcc documentation].
+with the available [documentation](https://developer.bitcoin.org).
 
 ## Forums
 
@@ -30,7 +39,7 @@ Core questions.
 
 - [Bitcoin StackExchange][] is a community dedicated entirely to
   answering questions about Bitcoin and related technology.  Many
-  questions about Bitcoin Core can be found under the [Bitcoin-Qt
+  questions about Bitcoin Core can be found under the [bitcoin-core
   tag][bitcoin stackexchange tag bitcoin-qt]
 
 - [BitcoinTalk Technical Support][forum tech support] is a
@@ -49,7 +58,7 @@ Core questions.
 
 ## Live
 
-Internet Relay Chat (IRC) is the most popular way to get live online
+Internet Relay Chat (IRC) is a popular way to get live online
 help with Bitcoin Core.  When providing links to documentation, most
 chatrooms require you post full links (not links shortened using
 services like TinyURL or Bit.ly).
@@ -67,10 +76,13 @@ serious IRC users use a [native IRC client][].
   listing][irc channels] on the Bitcoin Wiki.
 
 <br class="clear big">
-<div class="prevnext">
-<span markdown="1">**Previous**<br>[Translations][bcc contribute translations]</span>
-<span markdown="1">**Next**<br>[Contribute overview][bcc contribute]</span>
+<div class="prevnext" markdown="block">
+[PREV][bcc contribute translations]
+[NEXT][bcc contribute]
 </div>
 <br class="clear">
 
 {% include references.md %}
+
+</div>
+</div>

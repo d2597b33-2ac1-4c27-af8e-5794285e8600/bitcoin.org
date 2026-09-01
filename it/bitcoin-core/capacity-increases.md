@@ -1,6 +1,6 @@
 ---
 # This file is licensed under the MIT License (MIT) available on
-# http://opensource.org/licenses/MIT.
+# https://opensource.org/licenses/MIT.
 
 layout: base-core
 lang: en
@@ -11,7 +11,7 @@ breadcrumbs:
   - bitcoin
   - bcc
   - Capacity increases
-moved_url: https://bitcoincore.org/it/2015/12/21/capacity-increase/
+moved_url: https://bitcoincore.org/en/2015/12/21/capacity-increase/
 ---
 # Aumenti di capacità per il sistema Bitcoin
 

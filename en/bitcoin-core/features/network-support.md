@@ -1,6 +1,6 @@
 ---
 # This file is licensed under the MIT License (MIT) available on
-# http://opensource.org/licenses/MIT.
+# https://opensource.org/licenses/MIT.
 
 id: bitcoin-core-donate-bandwidth
 layout: base-core
@@ -13,16 +13,24 @@ breadcrumbs:
   - bcc features
   - Network Support
 ---
-# Donate Bandwidth Using Bitcoin Core
-{:.not-displayed}
 
-![Support the network](/img/bitcoin-core/slider-network.svg)
+<div class="hero">
+<div class="container hero-container" markdown="block">
+
+# Donate Bandwidth Using Bitcoin Core
+</div>
+</div>
+
+<div class="bitcore-content clearfix">
+<div class="container" markdown="block">
+
+![Support the network](/img/bitcoin-core/slider-network.svg?{{site.time | date: '%s'}})
 
 {% include bitcoin-core/download-bitcoin-core.html %}
 
 The Bitcoin peer-to-peer network serves both Bitcoin Core and many other
 Bitcoin programs (mostly lightweight wallets).  By contributing some of
-your bandwidth---typically about 100 GB upload a month---you can help
+your bandwidth---typically about 150 GB upload a month---you can help
 support Bitcoin.
 
 The [bandwidth sharing guide][] provides all of the details you need
@@ -50,10 +58,13 @@ volunteers like you, Bitcoin would never have come as far as it has.
 
 
 <br class="clear big">
-<div class="prevnext">
-<span markdown="1">**Previous Feature**<br>[User interface][bcc user interface]</span>
-<span markdown="1">**Next feature**<br>[Feature overview][bcc features]</span>
+<div class="prevnext" markdown="block">
+[PREV][bcc user interface]
+[NEXT][bcc features]
 </div>
 <br class="clear">
 
 {% include references.md %}
+
+</div>
+</div>

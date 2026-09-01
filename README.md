@@ -1,6 +1,6 @@
 # Welcome to Bitcoin.org's Codebase
 
-Current Build Status: ![Build Status](https://travis-ci.org/bitcoin-dot-org/bitcoin.org.svg?branch=master)
+Current Build Status: ![Build Status](https://api.travis-ci.com/bitcoin-dot-org/bitcoin.org.svg?branch=master)
 
 Live site: [Bitcoin.org](https://bitcoin.org)
 
@@ -19,10 +19,11 @@ The following quick guides will help you get started:
 + [Becoming a Contributor](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/become-a-contributor.md)
 + [Working with GitHub](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/working-with-github.md)
 + [Setting Up Your Environment](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/setting-up-your-environment.md)
-+ [Improving Developer Documentation](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/contributing-to-developer-documentation.md)
++ [Improving Developer Documentation](https://github.com/bitcoin-dot-org/developer.bitcoin.org/)
 + [Assisting with Translations](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/assisting-with-translations.md)
++ [Adding Exchanges](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/adding-exchanges.md)
 + [Managing Wallets](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/managing-wallets.md)
-+ [Adding Events, Release Notes and Alerts](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/adding-events-release-notes-and-alerts.md)
++ [Adding Release Notes and Alerts](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/adding-release-notes-and-alerts.md)
 + [Adding Blog Posts](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/adding-blog-posts.md)
 + [Miscellaneous / Other](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/miscellaneous.md)
 
@@ -30,9 +31,12 @@ The following quick guides will help you get started:
 
 Participation in this project is subject to a [Code of Conduct](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/CODE_OF_CONDUCT.md).
 
-### Donations
+## License
 
-Bitcoin.org is community supported: [1GwV7fPX97hmavc6iNrUZUogmjpLPrPFoE](bitcoin:1GwV7fPX97hmavc6iNrUZUogmjpLPrPFoE)
+This repository is released under the terms of the [MIT license](https://opensource.org/licenses/MIT). See [LICENSE](LICENSE) for more information.
 
-### Questions?
-Please contact Will Binns ([will@bitcoin.org](mailto:will@bitcoin.org)) if you need help.
+The intellectual property rights in the files are owned by the respective
+authors. Some of the files can be licensed under MIT License (MIT) available on
+https://opensource.org/licenses/MIT or other licenses. Appropriate licensing
+information can be found in the header of the file or in the folder containing
+the file.
